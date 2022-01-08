@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 17:56:02 by dha               #+#    #+#             */
-/*   Updated: 2022/01/08 19:49:47 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/01/08 19:53:46 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	hex_len(size_t dec)
 	return (c);
 }
 
-static size_t pow_hex(int n)
+static size_t	pow_hex(int n)
 {
 	size_t	ret;
 
@@ -48,7 +48,7 @@ char	*ft_dectohex(size_t dec, int is_int)
 	len = hex_len(dec);
 	cp = (char *) malloc(sizeof(char) * (len + 1));
 	if (!cp)
-		return 0;
+		return (0);
 	while (len > 0)
 	{
 		tmp = pow_hex(len - 1);
@@ -57,5 +57,5 @@ char	*ft_dectohex(size_t dec, int is_int)
 		len--;
 	}
 	cp[i] = '\0';
-	return cp;
+	return (cp);
 }

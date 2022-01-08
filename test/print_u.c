@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 01:01:03 by dha               #+#    #+#             */
-/*   Updated: 2022/01/08 19:30:31 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/01/08 23:41:14 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,16 +62,16 @@ static char	*ft_utoa(unsigned int n)
 	return (ret);
 }
 
-int	print_u(const char **fs, va_list ap)
+int	print_u(va_list *ap)
 {
-    char			*cp;
+	char			*cp;
 	unsigned int	nbr;
 	int				i;
 
 	i = 0;
-	nbr = (unsigned int)va_arg(ap, unsigned int);
+	nbr = (unsigned int)va_arg(*ap, unsigned int);
 	cp = ft_utoa(nbr);
-	if (cp == 0)
+	if (!cp)
 		return (-1);
 	while (cp[i])
 	{

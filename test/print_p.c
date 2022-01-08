@@ -6,20 +6,20 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 01:01:00 by dha               #+#    #+#             */
-/*   Updated: 2022/01/08 19:50:15 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/01/08 23:41:14 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_p(const char **fs, va_list ap)
+int	print_p(va_list *ap)
 {
-    char	*cp;
+	char	*cp;
 	size_t	dec;
 	int		i;
 
 	i = 0;
-	dec = (size_t)va_arg(ap, void *);
+	dec = (size_t)va_arg(*ap, void *);
 	cp = ft_dectohex(dec, 0);
 	if (!cp)
 		return (-1);

@@ -6,7 +6,7 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 13:47:55 by dha               #+#    #+#             */
-/*   Updated: 2022/01/08 19:49:57 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/01/08 23:40:29 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@
 # include <unistd.h>
 # define MAX_SPEC 9
 
-typedef int			(*t_conv)(const char **fs, va_list ap);
+typedef int			(*t_conv)(va_list *ap);
 
-int	ft_printf(const char *format, ...);
-int	print_c(const char **fs, va_list ap);
-int	print_s(const char **fs, va_list ap);
-int	print_p(const char **fs, va_list ap);
-int	print_i(const char **fs, va_list ap);
-int	print_u(const char **fs, va_list ap);
-int	print_x(const char **fs, va_list ap);
-int	print_ux(const char **fs, va_list ap);
+int		ft_printf(const char *format, ...);
+int		print_c(va_list *ap);
+int		print_s(va_list *ap);
+int		print_p(va_list *ap);
+int		print_i(va_list *ap);
+int		print_u(va_list *ap);
+int		print_x(va_list *ap);
+int		print_ux(va_list *ap);
 
 char	*ft_itoa(int n);
 char	*ft_dectohex(size_t dec, int is_int);

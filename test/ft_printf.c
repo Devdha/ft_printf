@@ -6,13 +6,13 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 13:42:01 by dha               #+#    #+#             */
-/*   Updated: 2022/01/08 19:34:10 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/01/08 23:42:47 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	fs_operator(const char **fs, va_list ap)
+int	fs_operator(const char **fs, va_list *ap)
 {
 	int	i;
 
@@ -23,7 +23,7 @@ int	fs_operator(const char **fs, va_list ap)
 		i++;
 	if (!g_form_spec[i])
 		return (0);
-	i = g_funcs[i](fs, ap);
+	i = g_funcs[i](ap);
 	if (i < 0)
 		return (-2147483648);
 	else
@@ -42,7 +42,7 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			ret += fs_operator(&format, ap);
+			ret += fs_operator(&format, &ap);
 			if (ret < 0)
 				return (-1);
 		}

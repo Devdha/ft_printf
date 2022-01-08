@@ -3,7 +3,13 @@
 
 int main()
 {
+	printf("null s test : \n    s : %s\n    d : %d\n    i : %i\n", NULL, NULL, NULL, NULL);
+
     printf("c test : %d, %d\n", ft_printf("%c\n", 'f'), printf("%c\n", 'f'));
+    printf("c test : %d, %d\n", ft_printf(" %c %c %c \n", '0', 0, '1'), printf(" %c %c %c \n", '0', 0, '1'));
+    printf("c test : %d, %d\n", ft_printf(" %c %c %c \n", '1', '2', '3'), printf(" %c %c %c \n", '1', '2', '3'));
+    printf("c test : %d, %d\n", ft_printf(" %c %c %c \n", '2', '1', 0), printf(" %c %c %c \n", '2', '1', 0));
+    printf("c test : %d \n", printf("%c / %c / %c / %c", 31, 29, 20, 0));
 
     printf("---------------------------------------\n");
     printf("s test : %d, %d\n", ft_printf("%s\n", "aaaaaaa"), printf("%s\n", "ahahah"));
@@ -27,7 +33,7 @@ int main()
 
     printf("---------------------------------------\n");
     printf("x test 1 : %d, %d\n", ft_printf("%x\n", 92233720368), printf("%x\n", 92233720368));
-    printf("x test 2 : %d, %d\n", ft_printf("%x\n", 92233720368547758200), printf("%x\n", 92233720368547758200));
+    printf("x test 2 : %d, %d\n", ft_printf("%x\n", 922337203685477582), printf("%x\n", 922337203685477582));
     printf("x test 3 : %d, %d\n", ft_printf("%x\n", "12345"), printf("%x\n", "12345"));
 
     printf("---------------------------------------\n");
@@ -35,5 +41,5 @@ int main()
     printf("X test 2 : %d, %d\n", ft_printf("%X\n", 922337203685477582), printf("%X\n", 922337203685477582));
     printf("X test 3 : %d, %d\n", ft_printf("%X\n", "12345"), printf("%X\n", "12345"));
 
-    system("leaks a.out");
+    //system("leaks a.out");
 }

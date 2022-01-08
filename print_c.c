@@ -6,16 +6,16 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 01:00:49 by dha               #+#    #+#             */
-/*   Updated: 2022/01/08 21:32:55 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/01/08 23:41:14 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_c(va_list ap)
+int	print_c(va_list *ap)
 {
 	char	c;
 
-	c = (char)va_arg(ap, int);
+	c = (char)va_arg(*ap, int);
 	return (write(1, &c, 1));
 }

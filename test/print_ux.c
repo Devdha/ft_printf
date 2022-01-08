@@ -6,21 +6,21 @@
 /*   By: dha <dha@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 01:01:05 by dha               #+#    #+#             */
-/*   Updated: 2022/01/08 19:50:06 by dha              ###   ########seoul.kr  */
+/*   Updated: 2022/01/08 23:41:14 by dha              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_ux(const char **fs, va_list ap)
+int	print_ux(va_list *ap)
 {
-    char			*cp;
+	char			*cp;
 	char			c;
 	unsigned int	dec;
 	int				i;
 
 	i = 0;
-	dec = (unsigned int)va_arg(ap, unsigned int);
+	dec = (unsigned int)va_arg(*ap, unsigned int);
 	cp = ft_dectohex(dec, 1);
 	if (!cp)
 		return (-1);
