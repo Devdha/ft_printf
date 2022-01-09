@@ -32,13 +32,11 @@ char	*ft_itoa(int n);
 char	*ft_dectohex(size_t dec, int is_int);
 int		ft_toupper(int c);
 
-static const t_conv	g_funcs[MAX_SPEC] =
-{
+static const t_conv	g_funcs[MAX_SPEC] = {
 	print_c, print_s, print_p, print_i, print_i, print_u, print_x, print_ux
 };
 
-static const char	g_form_spec[MAX_SPEC] =
-{
+static const char	g_form_spec[MAX_SPEC] = {
 	'c', 's', 'p', 'i', 'd', 'u', 'x', 'X'
 };
 
