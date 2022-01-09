@@ -35,10 +35,10 @@ $(LIB) :
 	make -sC ./$(LIB_DIR)
 
 clean :
-	$(RM) $(OBJS) && make clean -C ./$(LIB_DIR)
+	$(RM) $(OBJS) && make clean -sC ./$(LIB_DIR)
 
 fclean : clean
-	$(RM) $(NAME) && make fclean -C ./$(LIB_DIR)
+	$(RM) $(NAME) && make fclean -sC ./$(LIB_DIR)
 
 re : fclean all
 
